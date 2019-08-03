@@ -1,14 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug  2 10:50:38 2019
-
-@author: Rohit
-"""
-
 from panoramaOpenCV import ImageStitch
 import argparse
 import imutils
 import cv2
+import os
+
+os.remove("temp.png")
+print("File Removed")
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-f", "--first", required=True, help="path to the first image")
@@ -26,4 +23,5 @@ cv2.imshow("Image A", imageA)
 cv2.imshow("Image B", imageB)
 cv2.imshow("Keypoint Matches", vis)
 cv2.imshow("Result", result)
+cv2.imwrite("temp.png", result)
 cv2.waitKey(0)
