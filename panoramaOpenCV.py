@@ -3,13 +3,13 @@ import numpy as np
 import imutils
 import cv2
 
-class Stitcher:
+class ImageStitch:
 	def __init__(self):
 		# determine if we are using OpenCV v3.X
 		self.isv3 = imutils.is_cv3()
 		print('Your openCV 2 version is:', cv2.__version__, 'and variable is:', self.isv3)
 
-	def stitch(self, images, ratio=0.75, reprojThresh=4.0,
+	def istitch(self, images, ratio=0.75, reprojThresh=4.0,
 		showMatches=False):
 		# unpack the images, then detect keypoints and extract
 		# local invariant descriptors from them

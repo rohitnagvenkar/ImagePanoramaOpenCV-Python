@@ -5,7 +5,7 @@ Created on Fri Aug  2 10:50:38 2019
 @author: Rohit
 """
 
-from panoramaOpenCV import Stitcher
+from panoramaOpenCV import ImageStitch
 import argparse
 import imutils
 import cv2
@@ -20,8 +20,8 @@ imageB = cv2.imread(args["second"])
 imageA = imutils.resize(imageA, width=400)
 imageB = imutils.resize(imageB, width=400)
 
-com  = Stitcher()
-(result, vis) = com.stitch([imageA,imageB], showMatches=True)
+imgstitch  = ImageStitch()
+(result, vis) = imgstitch.istitch([imageA,imageB], showMatches=True)
 cv2.imshow("Image A", imageA)
 cv2.imshow("Image B", imageB)
 cv2.imshow("Keypoint Matches", vis)
